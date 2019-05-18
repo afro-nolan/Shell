@@ -1,0 +1,92 @@
+Name: Aifric Nolan
+
+MyShell
+This is a command-line shell made through python. This tool will allow you to navigate through your computer, access files and run programs. This program will run on both Linux and Unix operating systems. It supports both IO Redirection and Program Invocation.
+
+Getting Started:
+1. Download the program myshell.py
+2. Save it in an appropriate directory. Make sure to save the readme user manual and other appropriate files (curses_functions.py and file_manipulations.py) in the same directory.
+
+Prerequisites:
+1. Through your command-prompt or terminal, type 'python myshell.py'. If you wish to execute commands from a file, then type 'python myshell.py <file_name>', where <file_name> is a place holder for your file.
+2. Your shell is now ready to use.
+
+Built With:
+Python
+
+Authors
+Aifric Nolan
+
+Acknowledgements and References:
+https://docs.python.org/3/howto/curses.html
+https://danishprakish.github.io/2018/09/27/shell-in-python.html
+
+How to use:
+This shell can accept commands through the command line or through a file provided at execution. For example:
+python myshell.py <file_name> 
+The commands in the file are assumed to be seperated by newlines. I.E. One command one each line.
+This shell also supports I/O re-direction and background program execution. Alternatively from above, if you wish to execute commands from an input file, you may use 'python myshell.py < input_file', where input_file is the name of the file you wish to issue commands from. You may also redirect the output of your commands to a file using 'python myshell.py < input_file > output_file'. If output file is already a file, it will write over it. Otherwise, it will created a file with the name provided. If you wish to append the results of your commands to output_file instead of overwriting it, you may use the command 'python myshell.py < input_file >> output_file'.
+Key Commands: down : down-history, up : up-history, left : backward-char, right : forward-char
+
+List of Commands:
+
+All Commands support Output IO Redirection. For information on IO Redirection, type 'help IO Redirection'. 
+
+Command: dir <directory_name>
+Lists the contents of a directory. If directory name is omitted, will list contents of current directoy. If you wish to list the contents of a directory that is not currently in the working directory, add the directory names modelling the path from the current working directory, all seperating by a space. For example, to list directory 'family' from current working directory with path 'media/photos/family', then the command would be: '> dir media photos family'.
+
+Command: clr
+Clears the screen of the shell. This command takes no arguments.
+
+Command: quit
+Quits out of the shell. This command takes no arguments.
+
+Command: echo <comment>
+Displays a comment on a new line. If no arguments given, will skip a line. Example Usage: '>echo Hello World!'
+
+Command: help <command> OR ? <command>
+This command can take either 0 or 1 arguments which are the names of commands or concepts. If no argument supplied, the user manual will be displayed a few lines at a time. To scroll down the user manual, press spacebar. If an argument is supplied, the information relating to that command will be displayed. The help command can be called using "help <command>" or "? <command>".
+
+Command: cd <directory>
+Changes directory to <directory>. If <directory> omitted, will show current working directory. Example usage: '>cd assignment' or '>cd sample/sample1'
+
+Command: pwd
+Takes no argument and prints the current working directory.
+
+Command: environ
+Takes no argument and will list all the environment strings. Environment strings are all the string variables that are available to all processes. To learn more about this, type '? Environment Variables'.
+
+Command: shell
+Takes one or more arguments which act as commands. This is used with command 'shell <command>' or '! <command>'. It runs shell commands for you and supports prgram invocation. For example '! mkdir boo', This creates directory 'boo' or '> ! python hello_world.py' will run the python program hello_world.py.
+
+Command: commands
+Provides you with a list of commands. If further detail of any of the commands is needed, simply type 'help <command_name>' and instructions on how to use that particular command will be provided.
+
+Command: concepts
+Provides you with a list of concepts that can be explained by the shell. To read these explanations, type '? concept_name' so for example,'> ? IO Redirection' will display an explanation of what IO Redirection is.
+
+Explanations of concepts:
+
+Concept: IO Redirection
+IO Redirection means reading input in from a file, program or keyboard and outputting it as input to another file or program. So in Linux, input and output is categorised by three streams, these are standard input, standard output and standard error. Standard input is as we have described above, we are getting information from the user to the program. Standard output outputs the data generated by a program. Standard error outputs an error generated within a given program. We can redirect our input and output using commands such as" '<', '>', '>>'. An input file is marked by a '<'. The input file name comes after this, for example '< input_file'. The output file comes after '>', for example: '> output_file'. We can also append output to a file, so we don't overwrite its contents. This is marked as '>>' so for example; '>> output_file'. another method for redirecting output (although not in the scope of this shell) is Pipelining. This is the connecting of multiple commands together and on linux the pipe is represented by '|'.
+
+Concept: Program Environment
+The Program Environment refers to basic requirements you need to run your program. So for example, having all the required software installed that is needed for the program. Environment Variables are part of the program environment, to read more about these type '? Environment Variables' and for information on how to see them in your shell type '? environ'.
+
+Concept: Background Program Execution
+Background Program Execution means that a a program will run 'in the background' and without 'user intervention'. The Background Program is run as a process and the Background Process is usually a child process. To make a program run in the background, we can type '&' at the end of our command. This shell supports background program execution for external commands, an example of such a command would be '! sleep 4 &'.
+
+Concept: Shell
+That's me! A shell is a user interface which is used to access the operating system's resources. The shell can be invoked through the Command-Line Interface (CLI) which allows users to type commands, run programs, edit files etc. Shells are commonly associated with the UNIX Operating System and common UNIX shells are the Bournes Shell and the C Shell.
+
+Concept: Program Invocation
+Program Invocation is the execution of a program of function. So for example '> ! python test.py' will invoke the program test.py and run or execute it.
+
+Concept: Operating System
+So, a shell is used to access an operating system's resources. But what is an Operating System (OS)? An OS is an intermediary between the hardware and the applications/users. It controls the use of the hardware among the uses and application programs so in this way it is a resource allocator. The OS also controls the execution of programs to prevent any errors.
+
+Concept: Environment Variables
+An environment variable has its value set outside the program and they are available to all processes. It is composed of a name/value pair. For example, in UNIX, $PWD is a variable which points to the current working directory.
+
+Concept: Process
+A process is a program in execution and it always progresses sequentially. It is an active entity and consists of multiple parts such as the program code, program counter, stack, global variables and heap. The information associated with each process is stored in a data structure called the Process Control Block (PCB). The PCB is vital for process management.
