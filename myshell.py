@@ -270,7 +270,7 @@ class myShell(cmd.Cmd):
 		user manual"""
 
 		#Open readme manual
-		with open("readme") as f:
+		with open(manual) as f:
 			content = f.readlines()
 		if fm.append_output(args) is False: #If we don't need to append output to file
 			output_file_check = fm.output_file_provided(args) #If output file given
@@ -448,7 +448,9 @@ class myShell(cmd.Cmd):
 				subprocess.run(args.strip().split(">>")[0], stdout=log, shell=True)
 
 if __name__ == "__main__":
+	global manual
 	shell = myShell()
+	manual = os.getcwd() + "/readme"
 	output_file = fm.output_file_provided(sys.argv) #Check if output file
 	if len(sys.argv) > 1: #If there are arguments
 		if output_file is False: #No output file so must be input file
